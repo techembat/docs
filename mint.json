@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Embat",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:tech@embat.io"
     }
   ],
   "topbarCtaButton": {
@@ -84,8 +84,10 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/embat_es",
+    "linkedin": "https://www.linkedin.com/company/embat-io",
+    "instagram": "https://www.instagram.com/embat.io",
+    "website": "https://www.embat.io",
+    "youtube": "https://www.youtube.com/channel/UCfelRK2JtdEE7YdxFgIgMdg"
   }
 }
