@@ -1,0 +1,69 @@
+---
+title: 'Overview'
+---
+
+An **Attribute** is an entity in Embat that represents a custom field, providing a **flexible way to extend the data model** and introduce additional metadata for various objects such as transactions, contacts, operations or accounting entries. 
+
+Attributes do not store values themselves but define custom fields that can later be assigned specific values in different entities. They are commonly used to **map analytical dimensions** from an ERP into Embat, such as **cost centers or business units**. 
+
+### Example
+1. We can define an attribute **"Department"** to track financial allocations.
+2. Then we´ll asign its associated values: **"Marketing"**, **"IT"**, **"Operations"**.
+3. After that, we’ll apply it to transactions, contacts, and operations to categorize expenses.
+
+Here is how the attribute would look like:
+
+```json
+{
+  "customId": "dep-01",
+  "source": "erp",
+  "active": true,
+  "name": "Department",
+  "type": "list",
+  "required": false,
+  "values": [
+    { "customId": "marketing", "id": "1", "name": "Marketing" },
+    { "customId": "it", "id": "2", "name": "IT" },
+    { "customId": "operations", "id": "3", "name": "Operations" }
+  ]
+}
+```
+
+<Note>  
+### Custom Attribute Identifier  
+The `customId` field allows you to define a unique identifier for an attribute in Embat:  
+- You can set a `customId` manually based on your own naming convention.  
+- If no `customId` is provided, Embat will generate one automatically.  
+</Note>
+
+
+
+Finally, if we assign a value of this attribute to an operation, it will appear as follows:
+
+```json
+{
+  "status": "pending",
+  "amount": 123,
+  "currency": "EUR",
+  "paymentMethod": "<string>",
+  "attributes": [
+    {
+      "customId": "dep-01",
+      "value": "Marketing",
+      "valueCustomId": "marketing"
+    }
+  ],
+  "createdAt": "2023-11-07T05:31:56Z",
+  "updatedAt": "2023-11-07T05:31:56Z",
+  ...
+}
+```
+
+<Tip>  
+### Key Points
+- Attributes define fields and contain associated values.
+- They are commonly used to represent ERP dimensions.
+- The customId field allows users to define their own custom identifiers.
+</Tip> 
+
+

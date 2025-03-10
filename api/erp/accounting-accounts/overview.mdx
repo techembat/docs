@@ -1,0 +1,33 @@
+---
+title: 'Overview'
+---
+
+AccountingsAccount object respresents any accounting accounts of the journal. accountingCode represents unique id to Embat accountingsAccounts.
+
+Embat works with accountingsAccounts to make relationships with transactions to generate accounting entries.
+
+
+For example:
+```json
+{
+  "active": true,
+  "type": "banks",
+  "accountingName": "SANTANDER 0890",
+  "collective": true,
+  "additionalInfo": {},
+  "attributes": [
+    {
+      "customId": "<string>",
+      "value": "<string>",
+      "valueCustomId": "<string>"
+    }
+  ],
+  "accountingCode": "5720000001",
+  "companyId": "<string>",
+  "updatedAt": "2023-11-07T05:31:56Z",
+  "createdAt": "2023-11-07T05:31:56Z",
+  "balance": 123,
+  "balanceDate": "2023-11-07T05:31:56Z"
+}
+
+```

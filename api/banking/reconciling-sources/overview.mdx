@@ -1,0 +1,12 @@
+---
+title: 'Overview'
+---
+
+<Warning>This API section is in BETA. It might undergo significant changes and may not be stable.</Warning>
+ReconcilingSources represent the parent entities that group ReconcilingItems for reconciliation purposes. They define the origin of financial data that needs to be matched against product transactions, ensuring a structured and organized reconciliation process. customId represents unique id to Embat reconcilingSources.
+
+A Reconciling Source can represent a point-of-sale (POS) system, an internal financial system, or a CRM, among others. Each source acts as a container for its respective Reconciling Items, providing a way to categorize and manage reconciliation inputs effectively.
+
+Each Reconciling Source can specify a matchingMetadataKey, which determines the field within Reconciling Items metadata that should be used to associate them with product transactions. This allows for a flexible and scalable reconciliation framework.
+
+The API supports operations for creating, updating, retrieving, and deleting Reconciling Sources.
