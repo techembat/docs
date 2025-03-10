@@ -1,0 +1,71 @@
+---
+title: "Authentication"
+openapi: "POST /authentication/token"
+---
+
+The Embat API uses **OAuth2 Access Token authentication** to secure all API requests. Each request must include a valid **JWT Authorization header**.
+
+<Steps>
+  <Step title="Obtain an Access Token">
+  To authenticate, send a  POST request including your Embat credentials in the request body:
+    ```http
+    POST /authentication/token
+    ```
+    <CodeGroup>
+    ```json Request Body
+    {
+      "email": "user@example.com",
+      "password": "securepassword"
+    }
+    ```
+
+    ```json 200
+    {
+      "idToken": "your_generated_token_here"
+    }
+    ```
+    ```json 422
+    {
+      "detail": [
+        {
+          "loc": [
+            "string"
+          ],
+          "msg": "string",
+          "type": "string"
+        }
+      ]
+    }
+    ```
+    </CodeGroup>
+    The **idToken** obtained in the response will be used to authenticate all subsequent API requests.
+  </Step>
+
+  <Step title="Include the Token in API Requests">
+    Once you have obtained an **idToken**, include it in the `Authorization` header of every request:
+    ```http
+    GET /example-endpoint
+    Authorization: Bearer your_generated_token_here
+    ```
+
+    Without this token, the API will return an unauthorized error.
+  </Step>
+
+  <Step title="Ensure the Token is Valid">
+    Tokens expire after **60 minutes**. Therefore, if a request fails due to an expired token, you need to obtain a new one. To avoid authentication failures we recommend implementing a token refresh mechanism.
+
+    <Warning>
+      If your token expires, all API requests will fail.
+    </Warning>
+  </Step>
+</Steps>
+
+
+<Tip> 
+Best Practices
+- **Keep your credentials secure**: Never expose passwords or tokens in public repositories.
+- **Use HTTPS**: Ensure all API requests are encrypted.
+- **Handle token expiration**: Implement a strategy to refresh tokens before they expire.
+</Tip>
+
+

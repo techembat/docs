@@ -1,0 +1,80 @@
+---
+title: 'Overview'
+---
+
+The **Operation** entity in Embat represents **financial documents imported from the ERP**. These documents serve as the foundation for **cash flow forecasting** and **accounting processes** within the platform. 
+
+Each **Operation** corresponds to an accounting record, such as a due payment in an invoice. If an invoice has multiple due dates, each due is represented as a separate operation. 
+
+Each operation in Embat has a unique `customId`. When creating an operation, you can either provide your ERP’s identifier for consistency or let Embat generate one automatically.
+
+### Operation Statuses
+Operations can have different statuses that reflect their current state. 
+
+| Status   | Description  |
+| -------- | ------------------------------------- |
+| **Paid** | The operation has been paid and is no longer available for accounting. |
+| **Pending** | The operation is awaiting payment, with a due date set in the future. |
+| **Overdue** | The operation is awaiting payment, but the due date has already passed. |
+| **Cancel** | The operation was deleted in the ERP. |
+
+### Example
+Here is an example of an operation objetct at Embat 
+
+```json
+{
+  "status": "pending",
+  "paymentDate": "2023-11-07T05:31:56Z",
+  "chargeAccount": "<string>",
+  "contactAccount": "<string>",
+  "issuanceDate": "2023-11-07T05:31:56Z",
+  "dueDate": "2023-11-07T05:31:56Z",
+  "accountingCode": "<string>",
+  "accountingName": "<string>",
+  "operationsCustomIds": [
+    "<string>"
+  ],
+  "concept": "<string>",
+  "amount": 123,
+  "accountingAmount": 123,
+  "currency": "AED",
+  "accountingCurrency": "AED",
+  "exchangeRate": 123,
+  "paymentMethod": "<string>",
+  "contact": {
+    ...
+  },
+  "attributes": [
+    {
+      "customId": "dep-01",
+      "value": "Marketing",
+      "valueCustomId": "marketing"
+    }
+  ],
+  "customId": "op-001",
+  "pendingAmount": 123,
+  "pendingAccountingAmount": 123,
+  "documentId": "<string>",
+  "documentType": "invoice",
+  "id": "<string>",
+  "companyId": "<string>",
+  "updatedAt": "2023-11-07T05:31:56Z",
+  "createdAt": "2023-11-07T05:31:56Z",
+  "tags": [
+    "<any>"
+  ],
+  "categoryId": "<string>",
+  "generatedFrom": "<string>",
+  "comments": [
+    "<any>"
+  ],
+  "uploadedFiles": [
+    "<any>"
+  ],
+  "secondary": true
+}
+```
+
+Operations in Embat can be assigned [categories](/api/treasury/categories). When imported from the ERP, users can define rules to categorize them correctly, ensuring they appear in the right section of the Cash Flow Statement.
+
+Operations are linked to accounting codes and contacts. When a transaction is matched to an operation, a [payment](/api/erp/payments/Overview) object is created, containing all the necessary information to generate the corresponding accounting entry in the ERP.

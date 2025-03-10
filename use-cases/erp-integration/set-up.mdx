@@ -1,0 +1,58 @@
+---
+title: "Setup"
+---
+
+Setting up the Embat connector is the first step in integrating your ERP system. The main goal of this process is to ensure that all requests are made with a **valid authentication token** and that both **companies** and **bank products** are correctly mapped between the ERP and Embat.
+
+This section will guide you through the required steps to establish a reliable integration, focusing on authentication and entity mapping as the core components of the setup.
+
+--- 
+
+Before setting up the integration, it's essential to understand how Embat organizes financial data:  
+
+- **Organizations** contain multiple **companies**.  
+- Each **company** manages multiple **banks**.  
+- Each **bank** has multiple **products** (e.g., checking accounts, credit lines, loans).  
+
+In most ERPs, accounting accounts are structured by **companies and products**, without distinguishing between different banks. 
+
+# Steps
+
+<Steps>
+  <Step title="Authentication">
+    To authenticate API requests, the Embat connector requires a valid **Bearer Access Token**. The authentication process is fully explained in the **[API Authentication documentation](https://api.embat.io/docs#tag/Authentication)**.
+    The token has an expiration time of **60 minutes**. You can refresh it by making a new request with your credentials. Authentication is required for all endpoints. 
+    
+    <Tip> 
+    We recommend two approaches to managing token expiration:
+    - Track the token’s expiration time and request a new one before it expires.
+    - Attempt the API request first. If a `401 Unauthorized` response is returned, obtain a new token and retry the request.
+    </Tip>
+
+  </Step>
+  <Step title="Map companies">
+    Mapping companies is a critical step in the integration process. The connector must establish a link between **Embat’s companies** and the corresponding **ERP companies** to ensure accurate data synchronization.
+
+    To map companies, the connector must first retrieve the list of all companies available in Embat. This is done by calling the [companies](/api/organization/companies) endpoint.  
+
+    Each company in Embat is identified by a unique **`companyId`**, which is required for all API requests involving company-related data. 
+
+    The **company entity is managed directly in the Embat application**. This means:  
+    - The API does **not** provide endpoints to create or modify companies.  
+    - The connector’s role is to **map existing Embat companies to their corresponding ERP entities**.  
+    <Tip>  
+    **Best practices:**  
+    - Retrieve the list of companies at least once a day.  
+    - Map the Embat companies to their corresponding ERP entities.  
+    - Persist and update the mappings as needed.  
+    </Tip>  
+
+  </Step>
+  <Step title="Map products">
+    
+    The connector should be able to retreive all [products](/api/banking/products)  and allow a mapping to their corresponding accounting accounts. 
+
+  </Step>
+</Steps>
+
+Once the company and product mappings are established, the connector can proceed with the initial data load, ensuring that all relevant financial information from the ERP is accurately synchronized with Embat.

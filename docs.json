@@ -1,0 +1,263 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Embat API",
+  "colors": {
+    "primary": "#050B2C",
+    "light": "#F2F5F7",
+    "dark": "#050B2C"
+  },
+  "favicon": "/logo/favicon.png",
+  "navigation": {
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "overview",
+              "glossary"
+            ]
+          },
+          {
+            "group": "API",
+            "pages": [
+              "api/introduction",
+              "api/authentication",
+              {
+                "group": "Organization",
+                "pages": [
+                  {
+                    "group":"Companies",
+                    "pages":["api/organization/companies/overview","api/organization/companies/list-user-companies","api/organization/companies/retreive-company"]
+                  },
+                  {
+                    "group":"Users",
+                    "pages":["api/organization/users/overview","api/organization/users/list-company-users"]
+                  }
+                ]
+              },
+              {
+                "group": "Banking",
+                "pages": [
+                  {
+                    "group":"Banks",
+                    "pages":[
+                      "api/banking/banks/overview",
+                      "api/banking/banks/list-banks",
+                      "api/banking/banks/retreive-bank"
+                    ]
+                  },
+                  {
+                    "group":"Products",
+                    "pages":[
+                      "api/banking/products/overview",
+                      "api/banking/products/list-products",
+                      "api/banking/products/retreive-product",
+                      "api/banking/products/update-product",
+                      "api/banking/products/update-products-bulk"
+                    ]
+                  },
+
+                  {
+                    "group":"Balances",
+                    "pages":["api/banking/balances/overview","api/banking/balances/list-balances","api/banking/balances/retreive-balance"]
+                  },
+                  {
+                    "group":"Transactions",
+                    "pages":["api/banking/transactions/overview","api/banking/transactions/list-transactions","api/banking/transactions/retreive-transaction","api/banking/transactions/update-transaction","api/banking/transactions/update-transactions-bulk","api/banking/transactions/create-manual-transactions-bulk"]
+                  },
+                  {
+                    "group":"Forex",
+                    "pages":["api/banking/foreign-exchange-rates/overview","api/banking/foreign-exchange-rates/list-foreign-exchange-rates","api/banking/foreign-exchange-rates/retreive-foreign-exchange-rate"]
+                  },
+                  {
+                    "group":"Reconciling Sources",
+                    "pages":[
+                      "api/banking/reconciling-sources/overview",
+                      "api/banking/reconciling-sources/create-reconciling-source",
+                      "api/banking/reconciling-sources/list-reconciling-sources",
+                      "api/banking/reconciling-sources/retreive-reconciling-source",
+                      "api/banking/reconciling-sources/update-reconciling-source",
+                      "api/banking/reconciling-sources/delete-reconciling-source"
+                    ]
+                  },
+                  {
+                    "group":"Reconciling Items",
+                    "pages":[
+                      "api/banking/reconciling-items/overview",
+                      "api/banking/reconciling-items/create-reconciling-item",
+                      "api/banking/reconciling-items/create-reconciling-items-bulk",
+                      "api/banking/reconciling-items/list-reconciling-items",
+                      "api/banking/reconciling-items/read-reconciling-item-detail",
+                      "api/banking/reconciling-items/update-reconciling-item",
+                      "api/banking/reconciling-items/update-reconciling-items-bulk",
+                      "api/banking/reconciling-items/delete-reconciling-item",
+                      "api/banking/reconciling-items/delete-reconciling-items-bulk"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "ERP",
+                "pages": [
+                  {
+                    "group":"Operations",
+                    "pages":[
+                      "api/erp/operations/overview",
+                      "api/erp/operations/create-operation",
+                      "api/erp/operations/create-operations-bulk",
+                      "api/erp/operations/delete-operation",
+                      "api/erp/operations/delete-operations-bulk",
+                      "api/erp/operations/list-operations",
+                      "api/erp/operations/read-operation-detail",
+                      "api/erp/operations/update-operation",
+                      "api/erp/operations/update-operations-bulk" 
+                    ]
+                  },
+                  {
+                    "group":"Attributes",
+                    "pages":[
+                      "api/erp/attributes/overview",
+                      "api/erp/attributes/add-values-to-an-attribute",
+                      "api/erp/attributes/create-attribute",
+                      "api/erp/attributes/create-attributes-bulk",
+                      "api/erp/attributes/delete-attribute",
+                      "api/erp/attributes/delete-attributes-bulk",
+                      "api/erp/attributes/list-attributes",
+                      "api/erp/attributes/remove-values-to-an-attribute",
+                      "api/erp/attributes/retreive-attribute",
+                      "api/erp/attributes/update-attribute",
+                      "api/erp/attributes/update-attributes-bulk",
+                      "api/erp/attributes/add-internal-attributes-to-operations-bulk",
+                      "api/erp/attributes/remove-internal-attributes-from-operations-bulk"
+                    ]
+                  },
+                  {
+                    "group":"Accounting Entries",
+                    "pages":[
+                      "api/erp/accounting-entries/overview",
+                      "api/erp/accounting-entries/create-accounting-entries-bulk",
+                      "api/erp/accounting-entries/create-accounting-entry",
+                      "api/erp/accounting-entries/delete-accounting-entries-bulk-by-accounting-entry-code",
+                      "api/erp/accounting-entries/delete-accounting-entries-bulk",
+                      "api/erp/accounting-entries/delete-accounting-entry",
+                      "api/erp/accounting-entries/list-accounting-entries",
+                      "api/erp/accounting-entries/retreive-accounting-entry",
+                      "api/erp/accounting-entries/update-accounting-entries-bulk",
+                      "api/erp/accounting-entries/update-accounting-entry"
+                    ]
+                  },
+                  {
+                    "group":"Accounting Accounts",
+                    "pages":[
+                      "api/erp/accounting-accounts/overview",
+                      "api/erp/accounting-accounts/create-accounting-account",
+                      "api/erp/accounting-accounts/create-accounting-accounts-bulk",
+                      "api/erp/accounting-accounts/delete-accounting-account",
+                      "api/erp/accounting-accounts/delete-accounting-accounts-bulk",
+                      "api/erp/accounting-accounts/list-accounting-accounts",
+                      "api/erp/accounting-accounts/retreive-accounting-account",
+                      "api/erp/accounting-accounts/update-accounting-account",
+                      "api/erp/accounting-accounts/update-accounting-accounts-bulk"
+                    ]
+                  },
+                  {
+                    "group":"Payments",
+                    "pages":[
+                      "api/erp/payments/overview",
+                      "api/erp/payments/create-payment",
+                      "api/erp/payments/create-payments-bulk",
+                      "api/erp/payments/delete-payment",
+                      "api/erp/payments/delete-payments-bulk",
+                      "api/erp/payments/list-payments",
+                      "api/erp/payments/retreive-payment",
+                      "api/erp/payments/update-payment",
+                      "api/erp/payments/update-payments-bulk"
+                    ]
+                  },
+                  {
+                    "group":"Contacts",
+                    "pages":[
+                      "api/erp/contacts/overview",
+                      "api/erp/contacts/create-contact",
+                      "api/erp/contacts/create-contacts-bulk",
+                      "api/erp/contacts/delete-contact",
+                      "api/erp/contacts/delete-contacts-bulk",
+                      "api/erp/contacts/list-contacts",
+                      "api/erp/contacts/retreive-contact",
+                      "api/erp/contacts/update-contact",
+                      "api/erp/contacts/update-contacts-bulk" 
+                    ]
+                  },
+                  {
+                    "group":"Logs",
+                    "pages":[
+                      "api/erp/logs/overview",
+                      "api/erp/logs/create-log",
+                      "api/erp/logs/create-logs-bulk"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Treasury",
+                "pages": [
+                  {
+                    "group":"Categories",
+                    "pages":["api/treasury/categories/overview","api/treasury/categories/list-categories", "api/treasury/categories/retreive-category"]
+                  },
+                  {
+                    "group":"Scenarios",
+                    "pages":["api/treasury/scenarios/overview","api/treasury/scenarios/list-scenarios","api/treasury/scenarios/retreive-scenario"]
+                  },
+                  {
+                    "group":"Forecasts",
+                    "pages":[
+                      "api/treasury/forecasts/overview",
+                      "api/treasury/forecasts/list-forecasts",
+                      "api/treasury/forecasts/retreive-forecast",
+                      "api/treasury/forecasts/update-forecast",
+                      "api/treasury/forecasts/update-forecasts-bulk"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Usecases",
+            "pages": [
+              "use-cases/erp-integration",
+              {
+                "group":" ",
+                "pages":[
+                  "use-cases/erp-integration/introduction",
+                  "use-cases/erp-integration/prerequisites",
+                  "use-cases/erp-integration/set-up",
+                  "use-cases/erp-integration/initial-load",
+                  "use-cases/erp-integration/recurring-loads"
+                ]
+              },
+              "use-cases/powerbi"
+            ]
+          }
+        ]
+  },
+  "logo": {
+    "light": "/logo/Embat_logo_navy.png",
+    "dark": "/logo/Embat_logo_white.png"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Support",
+      "href": "mailto:hi@mintlify.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  }
+}

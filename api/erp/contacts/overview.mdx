@@ -1,0 +1,63 @@
+---
+title: 'Overview'
+---
+
+Contact object respresents any client and provider of operations. customId represents unique id to Embat contacts and you can use the field to put your ERP custom id when you create a contact.
+
+
+For example:
+
+```json
+    {
+    "tradeName": "JUAN MARTÍNEZ",
+    "legalName": "JUAN MARTÍNEZ",
+    "taxId": "12345678X",
+    "contact": {
+        "phone": "666777888",
+        "email": "juan@example.com",
+        "name": "Juan",
+        "surname": "Martínez"
+    },
+    "address": {
+        "postalCode": "28000",
+        "address": "calle fuencarral 123",
+        "province": "Madrid",
+        "city": "Madrid",
+        "country": "ES"
+    },
+    "contactType": "company",
+    "type": "supplier",
+    "accounts": [
+        {
+        "swift": "string",
+        "iban": "ES1234123412341234",
+        "default": true
+        }
+    ],
+    "paymentsAccounts": [
+        {
+        "default": false,
+        "currency": "EUR",
+        "details": {}
+        }
+    ],
+    "additionalInfo": { },
+    "accountingCode": "string",
+    "paymentMethod": "TRF",
+    "paymentTerms": 123,
+    "attributes": [
+    {
+        "customId": "string",
+        "value": "string",
+        "valueCustomId": "string"
+        }
+    ],
+    "customId": "18-100000",
+    "id": "string",
+    "companyId": "string",
+    "updatedAt": "2019-08-24T14:15:22Z",
+    "createdAt": "2019-08-24T14:15:22Z"
+}
+
+
+```

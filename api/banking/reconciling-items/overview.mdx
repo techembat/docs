@@ -1,0 +1,11 @@
+---
+title: 'Overview'
+---
+
+<Warning>This API section is in BETA. It might undergo significant changes and may not be stable.</Warning>
+
+ReconcilingItems represent individual financial records that need to be matched against product transactions. Each Reconciling Item belongs to a ReconcilingSource, which defines its origin (e.g., POS, internal system, CRM). These items contain essential financial details such as amount, currency, date, and description, as well as additional metadata to support reconciliation processes. customId represents unique id to Embat reconcilingItems.
+
+Each item includes a customId for unique identification and a reconcilingSourceCustomId to specify the Reconciling Source it belongs to. The metadata field allows storing custom attributes that may be required for matching transactions. The API also provides a reconciled flag to indicate whether an item has been successfully reconciled.
+
+The API supports individual and bulk operations for creating, updating, retrieving, and deleting Reconciling Items, ensuring efficient processing and management of reconciliation data at scale. Pagination is available for listing large datasets.
