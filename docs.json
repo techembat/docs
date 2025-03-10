@@ -227,16 +227,6 @@
             "group": "Usecases",
             "pages": [
               "use-cases/erp-integration",
-              {
-                "group":" ",
-                "pages":[
-                  "use-cases/erp-integration/introduction",
-                  "use-cases/erp-integration/prerequisites",
-                  "use-cases/erp-integration/set-up",
-                  "use-cases/erp-integration/initial-load",
-                  "use-cases/erp-integration/recurring-loads"
-                ]
-              },
               "use-cases/powerbi"
             ]
           }
